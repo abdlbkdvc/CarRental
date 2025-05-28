@@ -1,0 +1,50 @@
+﻿@using CarRental.Dto.TeamMemberDtos
+@model UpdateTeamMemberDto
+@{
+    ViewData["Title"] = "Takım Üyesi Güncelleme Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@*         public string PhotoUrl { get; set; }
+        public string MemberName { get; set; }
+        public string MemberJob { get; set; }
+        public bool MemberIsActive { get; set; }
+        public string TwitterUrl { get; set; }
+        public string FacebookUrl { get; set; }
+        public string InstagramUrl { get; set; } *@
+
+<form method="post">
+    <input type="hidden" asp-for="TeamMemberID" />
+    <label>Fotoğraf Url</label>
+    <input type="text" asp-for="PhotoUrl" class="form-control" />
+    <span asp-validation-for="PhotoUrl" class="text-danger"></span>
+    <br />
+    <label>Üye Adı</label>
+    <input type="text" asp-for="MemberName" class="form-control" />
+    <span asp-validation-for="MemberName" class="text-danger"></span>
+    <br />
+    <label>Üye Meslek</label>
+    <input type="text" asp-for="MemberJob" class="form-control" />
+    <span asp-validation-for="MemberJob" class="text-danger"></span>
+    <br />
+    <label>Üye Aktifliği</label>
+    <input type="text" asp-for="MemberIsActive" class="form-control" />
+    <span asp-validation-for="MemberIsActive" class="text-danger"></span>
+    <br />
+    <label>Twitter Url</label>
+    <input type="text" asp-for="TwitterUrl" class="form-control" />
+    <span asp-validation-for="TwitterUrl" class="text-danger"></span>
+    <br />
+    <label>Facebook Url</label>
+    <input type="text" asp-for="FacebookUrl" class="form-control" />
+    <span asp-validation-for="FacebookUrl" class="text-danger"></span>
+    <br />
+    <label>Instagram Url</label>
+    <input type="text" asp-for="InstagramUrl" class="form-control" />
+    <span asp-validation-for="InstagramUrl" class="text-danger"></span>
+    <br />
+    <button class="btn btn-outline-primary"> Takım Üyesi Güncelleme</button>
+</form>
+
+
+
+

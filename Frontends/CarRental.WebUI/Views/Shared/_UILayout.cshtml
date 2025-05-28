@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+@await Component.InvokeAsync("HeaderUILayoutComponentPartial")
+
+<body>
+    <!-- Topbar Start -->
+    @await Component.InvokeAsync("TopbarStartUILayoutComponentPartial")
+    <!-- Topbar End -->
+    <!-- Navbar Start -->
+    @await Component.InvokeAsync("NavbarStartUILayoutComponentPartial")
+    <!-- Navbar End -->
+    <!-- Search Start -->
+    @await Component.InvokeAsync("SearchStartUILayoutComponentPartial")
+    <!-- Search End -->
+    @RenderBody()
+    <!-- Vendor Start -->
+    @await Component.InvokeAsync("VendorUILayoutComponentPartial")
+    <!-- Vendor End -->
+    <!-- Footer Start -->
+    @await Component.InvokeAsync("FooterAddressUILayoutComponentPartial")
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <!-- JavaScript Libraries -->
+    @await Component.InvokeAsync("ScriptUILayoutComponentPartial")
+</body>
+</html>

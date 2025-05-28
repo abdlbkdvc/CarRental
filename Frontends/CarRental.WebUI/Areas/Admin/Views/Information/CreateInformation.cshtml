@@ -1,0 +1,46 @@
+﻿@using CarRental.Dto.InformationDtos
+@model CreateInformationDto
+@{
+    ViewData["Title"] = "Yeni Bilgi Oluştur Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@*       public string PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public string FacebookUrl { get; set; }
+        public string TwitterUrl { get; set; }
+        public string LinkedInUrl { get; set; }
+        public string InstagramUrl { get; set; }
+        public string YoutubeUrl { get; set; } *@
+
+<form method="post">
+    <label>Telefon Numarası</label>
+    <input type="text" asp-for="PhoneNumber" class="form-control" />
+    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    <br />
+    <label>Email</label>
+    <input type="text" asp-for="Email" class="form-control" />
+    <span asp-validation-for="Email" class="text-danger"></span>
+    <br />
+    <label>Facebook Url</label>
+    <input type="text" asp-for="FacebookUrl" class="form-control" />
+    <span asp-validation-for="FacebookUrl" class="text-danger"></span>
+    <br />
+    <label>Twitter Url</label>
+    <input type="text" asp-for="TwitterUrl" class="form-control" />
+    <span asp-validation-for="TwitterUrl" class="text-danger"></span>
+    <br />
+    <label>LinkedIn Url</label>
+    <input type="text" asp-for="LinkedInUrl" class="form-control" />
+    <span asp-validation-for="LinkedInUrl" class="text-danger"></span>
+    <br />
+    <label>Instagram Url</label>
+    <input type="text" asp-for="InstagramUrl" class="form-control" />
+    <span asp-validation-for="InstagramUrl" class="text-danger"></span>
+    <br />
+    <label>Youtube Url</label>
+    <input type="text" asp-for="YoutubeUrl" class="form-control" />
+    <span asp-validation-for="YoutubeUrl" class="text-danger"></span>
+    <br />
+    <button class="btn btn-outline-primary">Yeni Bilgi Oluştur</button>
+</form>
+

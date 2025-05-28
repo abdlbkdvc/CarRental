@@ -1,0 +1,14 @@
+﻿@using CarRental.Dto.BrandIconDtos
+@model CreateBrandIconDto
+@{
+    ViewData["Title"] = "Yeni Marka İkonu Oluştur";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <label>Fotoğraf Url</label>
+    <input type="text" asp-for="PhotoUrl" class="form-control" />
+    <span asp-validation-for="PhotoUrl" class="text-danger"></span>
+    <br />
+    <button class="btn btn-outline-primary">Yeni Marka İkonu Oluştur</button>
+</form>

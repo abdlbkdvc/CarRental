@@ -1,0 +1,69 @@
+﻿@using CarRental.Dto.FooterAddressDtos
+@model List<ResultFooterAddressDto>
+@{
+    ViewData["Title"] = "Alt Bilgi Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@* FooterAddressID
+Location
+PhoneNumber
+Email
+TwitterUrl
+FacebookUrl
+LinkedInUrl
+InstagramUrl
+CarGalleryPhotoUrl1
+CarGalleryPhotoUrl2
+CarGalleryPhotoUrl3
+CarGalleryPhotoUrl4
+CarGalleryPhotoUrl5
+CarGalleryPhotoUrl6 *@
+
+@{
+    int count = 0;
+}
+
+<table class="table table-hover">
+    <tr>
+        <th>#</th>
+        <th>Lokasyon</th>
+        <th>Telefon Numarası</th>
+        <th>Email</th>
+        <th>TwitterUrl</th>
+        <th>FacebookUrl</th>
+        <th>LinkedInUrl</th>
+        <th>GaleriFotoğrafUrl1</th>
+        <th>GaleriFotoğrafUrl2</th>
+        <th>GaleriFotoğrafUrl3</th>
+        <th>GaleriFotoğrafUrl4</th>
+        <th>GaleriFotoğrafUrl5</th>
+        <th>GaleriFotoğrafUrl6</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Location</td>
+            <td>@item.PhoneNumber</td>
+            <td>@item.Email</td>
+            <td>@item.TwitterUrl</td>
+            <td>@item.FacebookUrl</td>
+            <td>@item.LinkedInUrl</td>
+            <td>@item.CarGalleryPhotoUrl1</td>
+            <td>@item.CarGalleryPhotoUrl2</td>
+            <td>@item.CarGalleryPhotoUrl3</td>
+            <td>@item.CarGalleryPhotoUrl4</td>
+            <td>@item.CarGalleryPhotoUrl5</td>
+            <td>@item.CarGalleryPhotoUrl6</td>
+            <td>
+                <a asp-action="UpdateFooterAddress" asp-controller="FooterAddress" asp-route-id="@item.FooterAddressID" asp-area="Admin" class="btn btn-outline-info">Güncelle</a>
+                <a asp-action="DeleteFooterAddress" asp-controller="FooterAddress" asp-route-id="@item.FooterAddressID" asp-area="Admin" class="btn btn-outline-Danger">Sil</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<a asp-action="CreateFooterAddress" asp-controller="FooterAddress" asp-area="Admin" class="btn btn-outline-primary">Yeni Alt Bilgisi Ekle</a>

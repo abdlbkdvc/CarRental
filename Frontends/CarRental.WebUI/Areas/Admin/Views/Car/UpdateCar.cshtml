@@ -1,0 +1,42 @@
+﻿@using CarRental.Dto.CarDtos
+@model UpdateCarDto
+@{
+    ViewData["Title"] = "Araba Güncelleme Alanı";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+  @* public int CarID { get; set; }
+        public string PhotoUrl { get; set; }
+        public string CarName { get; set; }
+        public DateTime CarReleaseDate { get; set; }
+        public string Transmission { get; set; }
+        public string Km { get; set; }
+        public decimal Price { get; set; } *@
+
+<form method="post">
+    <input type="hidden" asp-for="CarID" />
+    <label>Fotoğraf Url</label>
+    <input type="text" asp-for="PhotoUrl" class="form-control" />
+    <span asp-validation-for="PhotoUrl" class="text-danger"></span>
+    <br />
+    <label>Araba Adı</label>
+    <input type="text" asp-for="CarName" class="form-control" />
+    <span asp-validation-for="CarName" class="text-danger"></span>
+    <br />
+    <label>Araba Çıkış Tarihi</label>
+    <input type="text" asp-for="CarReleaseDate" class="form-control" />
+    <span asp-validation-for="CarReleaseDate" class="text-danger"></span>
+    <br />
+    <label>Araba Vites Türü</label>
+    <input type="text" asp-for="Transmission" class="form-control" />
+    <span asp-validation-for="Transmission" class="text-danger"></span>
+    <br />
+    <label>Araba Kilometre</label>
+    <input type="text" asp-for="Km" class="form-control" />
+    <span asp-validation-for="Km" class="text-danger"></span>
+    <br />
+    <label>Araba Fiyat</label>
+    <input type="text" asp-for="Price" class="form-control" />
+    <span asp-validation-for="Price" class="text-danger"></span>
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+</form>

@@ -1,0 +1,53 @@
+﻿@using CarRental.Dto.InformationDtos
+@model List<ResultInformationDto>
+@{
+    ViewData["Title"] = "Bilgi Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@*  public int    InformationID { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public string FacebookUrl { get; set; }
+        public string TwitterUrl { get; set; }
+        public string LinkedInUrl { get; set; }
+        public string InstagramUrl { get; set; }
+        public string YoutubeUrl { get; set; } *@
+
+@{
+    int count = 0;
+}
+
+<table class="table table-hover">
+    <tr>
+        <th>#</th>
+        <th>Telefon Numarası</th>
+        <th>Email</th>
+        <th>FacebookUrl</th>
+        <th>TwitterUrl</th>
+        <th>LinkedInUrl</th>
+        <th>InstagramUrl</th>
+        <th>YoutubeUrl</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.PhoneNumber</td>
+            <td>@item.Email</td>
+            <td>@item.FacebookUrl</td>
+            <td>@item.TwitterUrl</td>
+            <td>@item.LinkedInUrl</td>
+            <td>@item.InstagramUrl</td>
+            <td>@item.YoutubeUrl</td>
+            <td>
+                <a asp-action="UpdateInformation" asp-controller="Information" asp-route-id="@item.InformationID" asp-area="Admin" class="btn btn-outline-info">Güncelle</a>
+                <a asp-action="DeleteInformation" asp-controller="Information" asp-route-id="@item.InformationID" asp-area="Admin" class="btn btn-outline-Danger">Sil</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<a asp-action="CreateInformation" asp-controller="Information" asp-area="Admin" class="btn btn-outline-primary">Bilgi Ekle</a>

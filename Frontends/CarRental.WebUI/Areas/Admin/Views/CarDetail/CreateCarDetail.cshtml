@@ -1,0 +1,41 @@
+﻿@using CarRental.Dto.CarDetailDtos
+@model CreateCarDetailDto
+@{
+    ViewData["Title"] = "Yeni Araba Detayı Oluştur";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@* public int CarDetailID { get; set; }
+        public string CarName { get; set; }
+        public string GalleryPhoto1 { get; set; }
+        public string GalleryPhoto2 { get; set; }
+        public string GalleryPhoto3 { get; set; }
+        public string GalleryPhoto4 { get; set; }
+        public string Description { get; set; } *@
+
+<form method="post">
+    <label>Araba Adı</label>
+    <input type="text" asp-for="CarName" class="form-control" />
+    <span asp-validation-for="CarName" class="text-danger"></span>
+    <br />
+    <label>Araba Fotoğraf 1</label>
+    <input type="text" asp-for="GalleryPhoto1" class="form-control" />
+    <span asp-validation-for="GalleryPhoto1" class="text-danger"></span>
+    <br />
+    <label>Araba Fotoğraf 2</label>
+    <input type="text" asp-for="GalleryPhoto2" class="form-control" />
+    <span asp-validation-for="GalleryPhoto2" class="text-danger"></span>
+    <br />
+    <label>Araba Fotoğraf 3</label>
+    <input type="text" asp-for="GalleryPhoto3" class="form-control" />
+    <span asp-validation-for="GalleryPhoto3" class="text-danger"></span>
+    <br />
+    <label>Araba Fotoğraf 4</label>
+    <input type="text" asp-for="GalleryPhoto4" class="form-control" />
+    <span asp-validation-for="GalleryPhoto4" class="text-danger"></span>
+    <br />
+    <label>Araba Açıklama</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <span asp-validation-for="Description" class="text-danger"></span>
+    <br />
+    <button class="btn btn-outline-primary">Yeni Araba Detayı Oluştur</button>
+</form>

@@ -1,0 +1,47 @@
+﻿@using CarRental.Dto.AboutDtos
+@model UpdateAboutDto
+@{
+    ViewData["Title"] = "UpdateAbout";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <input type="hidden" asp-for="AboutID" />
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+    <br />
+    <label>Başlık</label>
+    <input type="text" asp-for="ImageUrl" class="form-control" />
+    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+    <br />
+    <label>Başlık</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <span asp-validation-for="Description" class="text-danger"></span>
+    <br />
+    <label>Başlık</label>
+    <input type="text" asp-for="IconUrl1" class="form-control" />
+    <span asp-validation-for="IconUrl1" class="text-danger"></span>
+    <br />
+    <label>Başlık</label>
+    <input type="text" asp-for="IconTitle1" class="form-control" />
+    <span asp-validation-for="IconTitle1" class="text-danger"></span>
+    <br />
+    <label>Başlık</label>
+    <input type="text" asp-for="IconUrl2" class="form-control" />
+    <span asp-validation-for="IconUrl2" class="text-danger"></span>
+    <br />
+    <label>Başlık</label>
+    <input type="text" asp-for="IconTitle2" class="form-control" />
+    <span asp-validation-for="IconTitle2" class="text-danger"></span>
+    <br />
+    <label>Başlık</label>
+    <input type="text" asp-for="IconUrl3" class="form-control" />
+    <span asp-validation-for="IconUrl3" class="text-danger"></span>
+    <br />
+    <label>Başlık</label>
+    <input type="text" asp-for="IconTitle3" class="form-control" />
+    <span asp-validation-for="IconTitle3" class="text-danger"></span>
+    <br />
+    <button class="btn btn-outline-primary">Hakkımda Güncelle</button>
+</form>

@@ -1,0 +1,51 @@
+﻿@using CarRental.Dto.TeamMemberDtos
+
+@model List<ResultTeamMemberDto>
+@{
+    ViewData["Title"] = "Takım Üyesi Ekleme Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@*         public int TeamMemberID { get; set; }
+        public string PhotoUrl { get; set; }
+        public string MemberName { get; set; }
+        public string MemberJob { get; set; }
+        public bool MemberIsActive { get; set; }
+        public string TwitterUrl { get; set; }
+        public string FacebookUrl { get; set; }
+        public string InstagramUrl { get; set; } *@
+@{
+    int count = 0;
+}
+<table class="table table-hover">
+    <tr>
+        <th>#</th>
+        <th>Fotoğraf Url</th>
+        <th>Üye İsmi</th>
+        <th>Üye Meslek</th>
+        <th>Üye Statü</th>
+        <th>Twitter Url</th>
+        <th>Facebook Url</th>
+        <th>Instagram Url</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td><img src="@item.PhotoUrl" style="height:75px;width:75px;" /></td>
+            <td>@item.MemberName</td>
+            <td>@item.MemberJob</td>
+            <td>@item.MemberIsActive</td>
+            <td>@item.TwitterUrl</td>
+            <td>@item.FacebookUrl</td>
+            <td>@item.InstagramUrl</td>
+            <td>
+                <a asp-action="UpdateTeamMember" asp-controller="TeamMember" asp-route-id="@item.TeamMemberID" asp-area="Admin" class="btn btn-outline-info">Güncelle</a>
+                <a asp-action="DeleteTeamMember" asp-controller="TeamMember" asp-route-id="@item.TeamMemberID" asp-area="Admin" class="btn btn-outline-Danger">Sil</a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<a asp-action="CreateTeamMember" asp-controller="TeamMember" asp-area="Admin" class="btn btn-outline-primary">Yeni Takım Üyesi Ekle</a>

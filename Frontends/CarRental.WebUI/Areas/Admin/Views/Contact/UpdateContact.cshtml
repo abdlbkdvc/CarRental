@@ -1,0 +1,32 @@
+﻿@using CarRental.Dto.ContactDtos
+@model UpdateContactDto
+@{
+    ViewData["Title"] = "İletişim Güncelleme Alanı";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@*   public int ContactID { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Subject { get; set; }
+        public string Message { get; set; } *@
+
+<form method="post">
+    <input type="hidden" asp-for="ContactID" />
+    <label>İsim</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <br />
+    <label>Email</label>
+    <input type="text" asp-for="Email" class="form-control" />
+    <span asp-validation-for="Email" class="text-danger"></span>
+    <br />
+    <label>Konu</label>
+    <input type="text" asp-for="Subject" class="form-control" />
+    <span asp-validation-for="Subject" class="text-danger"></span>
+    <br />
+    <label>Mesaj</label>
+    <input type="text" asp-for="Message" class="form-control" />
+    <span asp-validation-for="Message" class="text-danger"></span>
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+</form>

@@ -1,0 +1,41 @@
+﻿@using CarRental.Dto.TestimonialDtos
+
+@model List<ResultTestimonialDto>
+@{
+    ViewData["Title"] = "Takdirname  Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@* public int TestimonialID { get; set; }
+        public string PhotoUrl { get; set; }
+        public string ClientName { get; set; }
+        public string ClientJob { get; set; }
+        public string ClientComment { get; set; } *@
+@{
+    int count = 0;
+}
+<table class="table table-hover">
+    <tr>
+        <th>#</th>
+        <th>Fotoğraf Url</th>
+        <th>Müşteri Adı</th>
+        <th>Müşteri Meslek</th>
+        <th>Müşteri Yorum</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td><img src="@item.PhotoUrl" style="height:75px;width:75px;" /></td>
+            <td>@item.ClientName</td>
+            <td>@item.ClientJob</td>
+            <td>@item.ClientComment</td>
+            <td>
+                <a asp-action="UpdateTestimonial" asp-controller="Testimonial" asp-route-id="@item.TestimonialID" asp-area="Admin" class="btn btn-outline-info">Güncelle</a>
+                <a asp-action="DeleteTestimonial" asp-controller="Testimonial" asp-route-id="@item.TestimonialID" asp-area="Admin" class="btn btn-outline-Danger">Sil</a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<a asp-action="CreateTestimonial" asp-controller="Testimonial" asp-area="Admin" class="btn btn-outline-primary">Yeni Takdirname Ekle</a>

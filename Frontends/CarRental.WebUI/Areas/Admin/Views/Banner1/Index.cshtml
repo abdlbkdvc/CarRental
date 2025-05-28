@@ -1,0 +1,38 @@
+﻿@using CarRental.Dto.Banner1Dtos
+
+@model List<ResultBanner1Dto>
+@{
+    ViewData["Title"] = "Banner1 Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@* Banner1ID
+Title
+ImageUrl1
+ImageUrl2 *@
+@{
+    int count = 0;
+}
+<table class="table table-hover">
+    <tr>
+        <th>#</th>
+        <th>Başlık</th>
+        <th>Fotoğraf Url1</th>
+        <th>Fotoğraf Url2</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Title</td>
+            <td><img src="@item.ImageUrl1" style="height:75px;width:75px;" /></td>
+            <td><img src="@item.ImageUrl2" style="height:75px;width:75px;" /></td>
+            <td>
+                <a asp-action="UpdateBanner1" asp-controller="Banner1" asp-route-id="@item.Banner1ID" asp-area="Admin" class="btn btn-outline-info">Güncelle</a>
+                <a asp-action="DeleteBanner1" asp-controller="Banner1" asp-route-id="@item.Banner1ID" asp-area="Admin" class="btn btn-outline-Danger">Sil</a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<a asp-action="CreateBanner1" asp-controller="Banner1" asp-area="Admin" class="btn btn-outline-primary">Yeni Banner1 Ekle</a>

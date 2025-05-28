@@ -1,0 +1,26 @@
+﻿@using CarRental.Dto.Banner3Dtos
+@model UpdateBanner3Dto
+@{
+    ViewData["Title"] = "UpdateBanner3";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@* PhotoUrl
+Title
+Description
+*@
+<form method="post">
+    <input type="hidden" asp-for="Banner3ID" />
+    <label>Fotoğraf Url</label>
+    <input type="text" asp-for="PhotoUrl" class="form-control" />
+    <span asp-validation-for="PhotoUrl" class="text-danger"></span>
+    <br />
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+    <br />
+    <label>Açıklama</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <span asp-validation-for="Description" class="text-danger"></span>
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+</form>

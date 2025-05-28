@@ -1,0 +1,32 @@
+﻿@using CarRental.Dto.ServiceDtos
+@model CreateServiceDto
+@{
+    ViewData["Title"] = "Yeni Servis Oluştur Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@*       public string ServiceTitle { get; set; }
+        public string IconUrl { get; set; }
+        public string IconTitle { get; set; }
+        public string IconDescription { get; set; } *@
+<form method="post">
+    <label>Servis Başlık</label>
+    <input type="text" asp-for="ServiceTitle" class="form-control" />
+    <span asp-validation-for="ServiceTitle" class="text-danger"></span>
+    <br />
+    <label>İkon Url</label>
+    <input type="text" asp-for="IconUrl" class="form-control" />
+    <span asp-validation-for="IconUrl" class="text-danger"></span>
+    <br />
+    <label>İkon Başlık</label>
+    <input type="text" asp-for="IconTitle" class="form-control" />
+    <span asp-validation-for="IconTitle" class="text-danger"></span>
+    <br />
+    <label>İkon Açıklama</label>
+    <input type="text" asp-for="IconDescription" class="form-control" />
+    <span asp-validation-for="IconDescription" class="text-danger"></span>
+    <br />
+    <button class="btn btn-outline-primary">Yeni İkon Oluştur</button>
+</form>
+
+
+

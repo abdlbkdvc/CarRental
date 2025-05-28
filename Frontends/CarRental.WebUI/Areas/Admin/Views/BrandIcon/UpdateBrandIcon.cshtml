@@ -1,0 +1,18 @@
+﻿@using CarRental.Dto.BrandIconDtos
+@model UpdateBrandIconDto
+@{
+    ViewData["Title"] = "Marka İkon Güncelleme Alanı";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@* PhotoUrl
+Title
+Description
+*@
+<form method="post">
+    <input type="hidden" asp-for="BrandIconID" />
+    <label>Fotoğraf Url</label>
+    <input type="text" asp-for="PhotoUrl" class="form-control" />
+    <span asp-validation-for="PhotoUrl" class="text-danger"></span>
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+</form>

@@ -1,0 +1,76 @@
+﻿@using CarRental.Dto.FooterAddressDtos
+@model CreateFooterAddressDto
+@{
+    ViewData["Title"] = "Yeni Alt Bilgi Oluştur";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@* 
+Location
+PhoneNumber
+Email
+TwitterUrl
+FacebookUrl
+LinkedInUrl
+InstagramUrl
+CarGalleryPhotoUrl1
+CarGalleryPhotoUrl2
+CarGalleryPhotoUrl3
+CarGalleryPhotoUrl4
+CarGalleryPhotoUrl5
+CarGalleryPhotoUrl6 *@
+
+<form method="post">
+    <label>Lokasyon</label>
+    <input type="text" asp-for="Location" class="form-control" />
+    <span asp-validation-for="Location" class="text-danger"></span>
+    <br />
+    <label>Telefon Numarası</label>
+    <input type="text" asp-for="PhoneNumber" class="form-control" />
+    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    <br />
+    <label>Email</label>
+    <input type="text" asp-for="Email" class="form-control" />
+    <span asp-validation-for="Email" class="text-danger"></span>
+    <br />
+    <label>Twitter Url</label>
+    <input type="text" asp-for="TwitterUrl" class="form-control" />
+    <span asp-validation-for="TwitterUrl" class="text-danger"></span>
+    <br />
+    <label>Facebook Url</label>
+    <input type="text" asp-for="FacebookUrl" class="form-control" />
+    <span asp-validation-for="FacebookUrl" class="text-danger"></span>
+    <br />
+    <label>LinkedIn Url</label>
+    <input type="text" asp-for="LinkedInUrl" class="form-control" />
+    <span asp-validation-for="LinkedInUrl" class="text-danger"></span>
+    <br />
+    <label>Instagram Url</label>
+    <input type="text" asp-for="InstagramUrl" class="form-control" />
+    <span asp-validation-for="InstagramUrl" class="text-danger"></span>
+    <br />
+    <label>Fotoğraf Url 1</label>
+    <input type="text" asp-for="CarGalleryPhotoUrl1" class="form-control" />
+    <span asp-validation-for="CarGalleryPhotoUrl1" class="text-danger"></span>
+    <br />
+    <label>Fotoğraf Url 2</label>
+    <input type="text" asp-for="CarGalleryPhotoUrl2" class="form-control" />
+    <span asp-validation-for="CarGalleryPhotoUrl2" class="text-danger"></span>
+    <br />
+    <label>Fotoğraf Url 3</label>
+    <input type="text" asp-for="CarGalleryPhotoUrl3" class="form-control" />
+    <span asp-validation-for="CarGalleryPhotoUrl3" class="text-danger"></span>
+    <br />
+    <label>Fotoğraf Url 4</label>
+    <input type="text" asp-for="CarGalleryPhotoUrl4" class="form-control" />
+    <span asp-validation-for="CarGalleryPhotoUrl4" class="text-danger"></span>
+    <br />
+    <label>Fotoğraf Url 5</label>
+    <input type="text" asp-for="CarGalleryPhotoUrl5" class="form-control" />
+    <span asp-validation-for="CarGalleryPhotoUrl5" class="text-danger"></span>
+    <br />
+    <label>Fotoğraf Url 6</label>
+    <input type="text" asp-for="CarGalleryPhotoUrl6" class="form-control" />
+    <span asp-validation-for="CarGalleryPhotoUrl6" class="text-danger"></span>
+    <br />
+    <button class="btn btn-outline-primary">Yeni Alt Bilgi Oluştur</button>
+</form>

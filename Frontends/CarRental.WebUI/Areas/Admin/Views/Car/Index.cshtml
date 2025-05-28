@@ -1,0 +1,51 @@
+﻿@using CarRental.Dto.CarDtos
+@model List<ResultCarDto>
+@{
+    ViewData["Title"] = "Araba Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@*        public int    CarID { get; set; }
+        public string PhotoUrl { get; set; }
+        public string CarName { get; set; }
+        public DateTime CarReleaseDate { get; set; }
+        public string Transmission { get; set; }
+        public string Km { get; set; }
+        public decimal Price { get; set; } *@
+
+@{
+    int count = 0;
+}
+
+<table class="table table-hover">
+    <tr>
+        <th>#</th>
+        <th>Fotoğraf Url</th>
+        <th>Araba Adı</th>
+        <th>Araba Çıkış Tarihi</th>
+        <th>Araba Vites Türü</th>
+        <th>Araba Km</th>
+        <th>Araba Fiyat</th>
+        <th>Aksiyonlar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.PhotoUrl</td>
+            <td>@item.CarName</td>
+            <td>@item.CarReleaseDate</td>
+            <td>@item.Transmission</td>
+            <td>@item.Km</td>
+            <td>@item.Price</td>
+            <td>
+                <a asp-action="UpdateCar" asp-controller="Car" asp-route-id="@item.CarID" asp-area="Admin" class="btn btn-outline-info">Güncelle</a>
+                <a asp-action="DeleteCar" asp-controller="Car" asp-route-id="@item.CarID" asp-area="Admin" class="btn btn-outline-Danger">Sil</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<a asp-action="CreateCar" asp-controller="Car" asp-area="Admin" class="btn btn-outline-primary">Yeni Marka İkon Ekle</a>

@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CarRental.Dto.Banner2Dtos
+{
+    public class CreateBanner2Dto
+    {
+        public string Discount { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public string PhotoUrl { get; set; }
+    }
+}

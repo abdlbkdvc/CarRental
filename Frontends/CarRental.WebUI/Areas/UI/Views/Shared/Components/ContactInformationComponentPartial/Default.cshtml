@@ -1,0 +1,19 @@
+﻿@using CarRental.Dto.ContactInformationDtos
+@model List<ResultContactInformationDto>
+
+<div class="col-lg-5 mb-2">
+    <div class="bg-secondary d-flex flex-column justify-content-center px-5 mb-4" style="height: 435px;">
+        @foreach (var item in Model)
+        {
+            <div class="d-flex mb-3">
+                <i class="@item.IconUrl"></i>
+                <div class="mt-n1">
+                    <h5 class="text-light">@item.Title</h5>
+                    <p>@item.Address</p>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+

@@ -1,0 +1,25 @@
+﻿@using CarRental.Dto.Banner1Dtos
+@model CreateBanner1Dto
+@{
+    ViewData["Title"] = "Yeni Banner1 Oluştur Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <label>Başlık</label>
+    <input type="text" asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+    <br />
+    <label>Fotoğraf 1 Url</label>
+    <input type="text" asp-for="ImageUrl1" class="form-control" />
+    <span asp-validation-for="ImageUrl1" class="text-danger"></span>
+    <br />
+    <label>Fotoğraf 2 Url</label>
+    <input type="text" asp-for="ImageUrl2" class="form-control" />
+    <span asp-validation-for="ImageUrl2" class="text-danger"></span>
+    <br />
+    <button class="btn btn-outline-primary">Yeni Banner1 Oluştur</button>
+</form>
+
+
+

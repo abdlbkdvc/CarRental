@@ -1,0 +1,32 @@
+﻿@using CarRental.Dto.TestimonialDtos
+@model UpdateTestimonialDto
+@{
+    ViewData["Title"] = "Takdirname Güncelleme Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@*         public string PhotoUrl { get; set; }
+        public string ClientName { get; set; }
+        public string ClientJob { get; set; }
+        public string ClientComment { get; set; } *@
+
+<form method="post">
+    <input type="hidden" asp-for="TestimonialID" />
+    <label>Fotoğraf Url</label>
+    <input type="text" asp-for="PhotoUrl" class="form-control" />
+    <span asp-validation-for="PhotoUrl" class="text-danger"></span>
+    <br />
+    <label>Müşteri İsmi</label>
+    <input type="text" asp-for="ClientName" class="form-control" />
+    <span asp-validation-for="ClientName" class="text-danger"></span>
+    <br />
+    <label>Müşteri Meslek</label>
+    <input type="text" asp-for="ClientJob" class="form-control" />
+    <span asp-validation-for="ClientJob" class="text-danger"></span>
+    <br />
+    <label>Müşteri Yorum</label>
+    <input type="text" asp-for="ClientComment" class="form-control" />
+    <span asp-validation-for="ClientComment" class="text-danger"></span>
+    <br />
+    <button class="btn btn-outline-primary">Takdirname Güncelleme</button>
+</form>
+

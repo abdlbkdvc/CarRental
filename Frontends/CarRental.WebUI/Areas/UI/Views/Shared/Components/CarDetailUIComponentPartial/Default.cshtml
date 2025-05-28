@@ -1,0 +1,89 @@
+﻿@using CarRental.Dto.CarDtos
+<!-- Detail Start -->
+@model List<ResultCarDto>
+<div class="container-fluid pt-5">
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-lg-8 mb-5">
+                <h1 class="display-4 text-uppercase mb-5">Arabalar</h1>
+                @foreach (var item in Model)
+                {
+                    <div class="row mx-n2 mb-3">
+
+                        <div class="col-md-3 col-6 px-2 pb-2">
+                            <img class="img-fluid w-100" src="@item.PhotoUrl" alt="">
+                        </div>
+                    </div>
+                  
+                    <div class="row pt-2">
+                        <div class="col-md-3 col-6 mb-2">
+                            <i class="fa fa-car text-primary mr-2"></i>
+                            <span>Model: @item.CarReleaseDate</span>
+                        </div>
+                        <div class="col-md-3 col-6 mb-2">
+                            <i class="fa fa-cogs text-primary mr-2"></i>
+                            <span>@item.Transmission</span>
+                        </div>
+                        <div class="col-md-3 col-6 mb-2">
+                            <i class="fa fa-road text-primary mr-2"></i>
+                            <span>@item.Km</span>
+                        </div>
+                        <div class="col-md-3 col-6 mb-2">
+                            <i class="fa fa-eye text-primary mr-2"></i>
+                            <span>@item.Price</span>
+                        </div>
+                    </div>
+                }
+
+
+
+            </div>
+
+            <div class="col-lg-4 mb-5">
+                <div class="bg-secondary p-5">
+                    <h3 class="text-primary text-center mb-4">Uygun Olanlar</h3>
+                    <div class="form-group">
+                        <select class="custom-select px-4" style="height: 50px;">
+                            <option selected>Lokasyon Seç</option>
+                            <option value="1">Lokasyon  1</option>
+                            <option value="2">Lokasyon  2</option>
+                            <option value="3">Lokasyon  3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="custom-select px-4" style="height: 50px;">
+                            <option selected> Lokasyon Bildir</option>
+                            <option value="1">Lokasyon  1</option>
+                            <option value="2">Lokasyon  2</option>
+                            <option value="3">Lokasyon  3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div class="date" id="date1" data-target-input="nearest">
+                            <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Tarih Seç"
+                                   data-target="#date1" data-toggle="datetimepicker" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="time" id="time1" data-target-input="nearest">
+                            <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Alış Tarihi"
+                                   data-target="#time1" data-toggle="datetimepicker" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <select class="custom-select px-4" style="height: 50px;">
+                            <option selected>Personel Seç</option>
+                            <option value="1">Personel 1</option>
+                            <option value="2">Personel 2</option>
+                            <option value="3">Personel 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-0">
+                        <button class="btn btn-primary btn-block" type="submit" style="height: 50px;">Şimdi Kontrol Et</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Detail End -->

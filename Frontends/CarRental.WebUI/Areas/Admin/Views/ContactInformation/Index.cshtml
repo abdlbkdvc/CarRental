@@ -1,0 +1,41 @@
+﻿@using CarRental.Dto.ContactInformationDtos
+@model List<ResultContactInformationDto>
+@{
+    ViewData["Title"] = "İletişim Bilgi Sayfası";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@*   public int    ContactID { get; set; }
+        public string IconUrl { get; set; }
+        public string Title { get; set; }
+        public string Address { get; set; } *@
+
+@{
+    int count = 0;
+}
+
+<table class="table table-hover">
+    <tr>
+        <th>#</th>
+        <th>İkon Url</th>
+        <th>Başlık</th>
+        <th>Adres</th>
+        <th>Aksiyonlar</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.IconUrl</td>
+            <td>@item.Title</td>
+            <td>@item.Address</td>
+            <td>
+                <a asp-action="UpdateContactInformation" asp-controller="ContactInformation" asp-route-id="@item.ContactID" asp-area="Admin" class="btn btn-outline-info">Güncelle</a>
+                <a asp-action="DeleteContactInformation" asp-controller="ContactInformation" asp-route-id="@item.ContactID" asp-area="Admin" class="btn btn-outline-Danger">Sil</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<a asp-action="CreateContactInformation" asp-controller="ContactInformation" asp-area="Admin" class="btn btn-outline-primary">Yeni İletişim Bilgisi Ekle</a>
